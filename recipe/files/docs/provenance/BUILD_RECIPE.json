@@ -1,0 +1,52 @@
+{
+  "schema": "kitforge.build_recipe.v1",
+  "slug": "uptimekuma",
+  "image": "readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r3",
+  "build_method": "source-rebuild-node",
+  "source": {
+    "repo": "https://github.com/louislam/uptime-kuma",
+    "ref": "2.5.12",
+    "node_version": "22",
+    "node_dist": {
+      "version": "22.23.5",
+      "sha256": "c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1",
+      "_note": "The official nodejs.org build node-v22.23.3-linux-x64.tar.gz (latest 22.x on 2026-10-10). sha256 copied from https://nodejs.org/dist/v22.23.3/SHASUMS256.txt, whose detached signature (SHASUMS256.txt.sig) verified as a Good signature from Node.js release key 5BE8A3F6C8A5C01D106C0AD820B1A390B168D356 (Antoine du Hamel, listed in nodejs/release-keys) on 2026-10-10. Dockerfile.vendor checks the download against both the published SHASUMS256.txt and this pin and exports the tarball, SHASUMS256.txt and its .sig to vendored/node/; the offline build re-checks this sha256 before installing it into the runtime. Builder and runtime run this one Node build. Bump version + sha256 together for a Node security release."
+    },
+    "builder_image": "ubuntu:24.04",
+    "package_manager": "npm",
+    "install_cmd": "npm ci",
+    "pre_install_cmds": [
+      "node -e \"const p=require('./package.json');const F={'ws':'8.21.3','axios':'0.34.0','compression':'1.8.2'};const v=s=>(String(s).match(/\\d+(\\.\\d+)*/)||['0'])[0].split('.').map(Number);const lt=(a,b)=>{for(let i=0;i<3;i++){if((a[i]||0)!==(b[i]||0))return (a[i]||0)<(b[i]||0);}return false;};for(const k in F){const c=(p.dependencies||{})[k];if(!c)continue;const a=v(c),b=v(F[k]);if(a[0]===b[0]&&lt(a,b)){p.dependencies[k]=F[k];console.log('direct floor '+k+': '+c+' -> '+F[k]);}else console.log('direct floor '+k+': '+c+' kept');}require('fs').writeFileSync('package.json',JSON.stringify(p,null,2));\""
+    ],
+    "build_cmds": [
+      "npm run build"
+    ],
+    "prune_cmd": "npm prune --omit=dev",
+    "native_build_packages": [
+      "python3",
+      "make",
+      "g++",
+      "pkg-config"
+    ],
+    "skip_download_env": {
+      "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "1",
+      "PUPPETEER_SKIP_DOWNLOAD": "1",
+      "CYPRESS_INSTALL_BINARY": "0",
+      "NPM_CONFIG_FUND": "false",
+      "NPM_CONFIG_AUDIT": "false"
+    },
+    "source_date_epoch": 1795543201,
+    "source_date_epoch_provenance": "the time release 2.5.12-CE-ubuntu24.04-r3 was cut (2026-11-24T18:00:01Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 5aa5dec425f8, dated 2026-11-17T15:14:50Z (source.commit_epoch).",
+    "commit": "5aa5dec425f8a955b54e150636979a6927745ec5",
+    "source_date_epoch_basis": "release-cut",
+    "commit_epoch": 1794928490
+  },
+  "binaries_from_source": null,
+  "runtime_packages": [
+    "ca-certificates",
+    "tzdata",
+    "dumb-init",
+    "curl",
+    "iputils-ping"
+  ]
+}

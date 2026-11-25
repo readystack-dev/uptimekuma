@@ -1,0 +1,9 @@
+{
+  "schema": "kitforge.source_tree_hash.v1",
+  "slug": "uptimekuma",
+  "repo": "https://github.com/louislam/uptime-kuma",
+  "ref": "2.5.12",
+  "commit": "5aa5dec425f8a955b54e150636979a6927745ec5",
+  "tree_listing_sha256": "73b080536f01c571cbf987245f40d95aa39befe01bdc293ed5e2ca45ad488107",
+  "file_count": 804
+}
