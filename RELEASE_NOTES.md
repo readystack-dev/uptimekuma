@@ -1,15 +1,15 @@
-# Uptime Kuma 2.5.12 — ReadyStack release `2.5.12-CE-ubuntu24.04-r3`
+# Uptime Kuma 2.5.12 — ReadyStack release `2.5.12-CE-ubuntu24.04-r4`
 
-Generated 2026-11-25 from this release's build records and strategy. Statements that come from a single record name it in brackets; the others come from this release's strategy and build log.
+Generated 2026-11-27 from this release's build records and strategy. Statements that come from a single record name it in brackets; the others come from this release's strategy and build log.
 
 ## Release
 
-- **Image:** `readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r3` (linux/amd64). Index digest `sha256:e061a2f4e947d1059dad92ba2581cd308078520c17da69ad1da6186d1b794d4b` [`docs/provenance/LOCKED_DIGEST.txt`].
-- **Image manifest digest:** `sha256:5ed8ea83cd683f136df4e79cd6e062eebfc1f3b033a97aba145adf9a6845bb1a` [`TARGET_DIGEST.txt`].
+- **Image:** `readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r4` (linux/amd64). Index digest `sha256:3df2b214a150a365d632d060217d2c67878c7227166ccdbfae74e272ed3ffe01` [`docs/provenance/LOCKED_DIGEST.txt`].
+- **Image manifest digest:** `sha256:965faaaa3925ca466de6a204a7a8a5cddeede30e16630416353dee2ed81d2546` [`TARGET_DIGEST.txt`].
 - **Upstream:** Uptime Kuma 2.5.12 built from source at `2.5.12` of https://github.com/louislam/uptime-kuma — upstream notes: https://github.com/louislam/uptime-kuma/releases/tag/2.5.12 [`docs/provenance/BUILD_RECIPE.json`].
 - **Base image:** `ubuntu:24.04`; runtime user `uptimekuma`.
 - **Build:** `source-rebuild-node`, built offline with `--network=none`.
-- **Supersedes:** ReadyStack release `2.5.12-CE-ubuntu24.04-r2`.
+- **Supersedes:** ReadyStack release `2.5.12-CE-ubuntu24.04-r3`.
 
 ## What changed in this release
 
@@ -25,18 +25,18 @@ Generated 2026-11-25 from this release's build records and strategy. Statements 
   - `nodemailer` at least `10.0.6` (shipped: `10.0.6`)
   - `protobufjs` at least `7.6.1` (shipped: `7.6.1`)
   - `tar` at least `7.5.21` (shipped: `7.5.21`)
-- Uptime Kuma 2.5.12 is unchanged from the release this supersedes (2.5.12-CE-ubuntu24.04-r2); this release rebuilds it. Changes: libssh-4 moves from 0.10.6-2ubuntu0.5 to 0.10.6-2ubuntu0.6 (USN-9187-1). Settings, ports and data volumes are those of 2.5.12-CE-ubuntu24.04-r2: replace the container with this image on the same volumes.
+- Uptime Kuma 2.5.12 is unchanged from the release this supersedes (2.5.12-CE-ubuntu24.04-r3); this release rebuilds it. Changes: libgssapi-krb5-2 moves from 1.20.1-6ubuntu2.10 to 1.20.1-6ubuntu2.12 (USN-9202-1); libk5crypto3 moves from 1.20.1-6ubuntu2.10 to 1.20.1-6ubuntu2.12 (USN-9202-1); libkrb5-3 moves from 1.20.1-6ubuntu2.10 to 1.20.1-6ubuntu2.12 (USN-9202-1); libkrb5support0 moves from 1.20.1-6ubuntu2.10 to 1.20.1-6ubuntu2.12 (USN-9202-1). Settings, ports and data volumes are those of 2.5.12-CE-ubuntu24.04-r3: replace the container with this image on the same volumes.
 
-## Security status at release (measured 2026-11-25)
+## Security status at release (measured 2026-11-27)
 
 - **Docker Scout:** 0 fixable critical/high vulnerabilities; runs as `uptimekuma` (non-root); SBOM + provenance attestations present (SPDX SBOM + SLSA v1) [`docs/provenance/SCOUT_VERDICT.json`].
 - **OSV cross-check:** no fixable critical/high vulnerability beyond Docker Scout's findings.
-- **Signature:** cosign signature verified by ReadyStack's release gate before publishing; check it yourself with `cosign verify --key https://readystack.dev/keys/cosign.pub readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r3` (signatures are recorded in the public Sigstore transparency log).
+- **Signature:** cosign signature verified by ReadyStack's release gate before publishing; check it yourself with `cosign verify --key https://readystack.dev/keys/cosign.pub readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r4` (signatures are recorded in the public Sigstore transparency log).
 - **ReadyStack release check at release:** passed (ReadyStack's own test, not a Docker Scout grade). Vulnerabilities are disclosed every day and the image never changes, so it is re-checked daily, beside Docker Scout's own dated grade, at https://readystack.dev/queue.
 
 ## Reproducibility
 
-Rebuilds offline from this archive to the identical image digest `sha256:5ed8ea83cd683f136df4e79cd6e062eebfc1f3b033a97aba145adf9a6845bb1a`: run `./BUILD_OFFLINE.sh`, then `./VERIFY_OFFLINE.sh` (add `--online` to confirm the Docker Hub tag holds the same digest). Before publishing, ReadyStack rebuilt the kit with `./BUILD_OFFLINE.sh` and compared the result with the published digest [`docs/provenance/REPRO_VERIFICATION.json`], then ran `./BUILD_OFFLINE.sh` and `./VERIFY_OFFLINE.sh` from this archive (without `--online`).
+Rebuilds offline from this archive to the identical image digest `sha256:965faaaa3925ca466de6a204a7a8a5cddeede30e16630416353dee2ed81d2546`: run `./BUILD_OFFLINE.sh`, then `./VERIFY_OFFLINE.sh` (add `--online` to confirm the Docker Hub tag holds the same digest). Before publishing, ReadyStack rebuilt the kit with `./BUILD_OFFLINE.sh` and compared the result with the published digest [`docs/provenance/REPRO_VERIFICATION.json`], then ran `./BUILD_OFFLINE.sh` and `./VERIFY_OFFLINE.sh` from this archive (without `--online`).
 
 ## Validation
 
@@ -46,14 +46,14 @@ Rebuilds offline from this archive to the identical image digest `sha256:5ed8ea8
 
 ## Known issues
 
-- None found (reviewed by held semantic review (Claude) on 2026-11-25).
+- None found (reviewed by held semantic review (Claude) on 2026-11-27).
 
 ## Verify this archive
 
 ```
 sha256sum -c CHECKSUMS.sha256
 ./BUILD_OFFLINE.sh && ./VERIFY_OFFLINE.sh --online
-cosign verify --key https://readystack.dev/keys/cosign.pub readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r3
+cosign verify --key https://readystack.dev/keys/cosign.pub readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r4
 ```
 
 ReadyStack records every signature in the public Sigstore transparency log (Rekor), so the command needs no extra flags.

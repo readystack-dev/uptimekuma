@@ -16,8 +16,8 @@
     "context": ".",
     "dockerfile": "Dockerfile.offline.pinned",
     "mtime_policy": "clamp",
-    "source_date_epoch": 1795543201,
-    "tree_hash": "sha256:ff7520aaad7aeee73e387b5c7bf1f5106229f17dffd4c88875a5ba6cfd00e54b"
+    "source_date_epoch": 1795672796,
+    "tree_hash": "sha256:3092de183dbba44129c580d67e679559a0419e206d6ce9d7636272ed527af4bd"
   },
   "probe": {
     "http_path": "/api/entry-page",
@@ -26,8 +26,8 @@
   },
   "schema": "readystack-rebuild-bundle/v0.1",
   "subject": {
-    "config_digest": "sha256:71aa8513b79f916918a496031e0b96378410f9cb190ed9407a8e3e0d5a808355",
-    "image_manifest_digest": "sha256:5ed8ea83cd683f136df4e79cd6e062eebfc1f3b033a97aba145adf9a6845bb1a",
-    "name": "docker.io/readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r3"
+    "config_digest": "sha256:e32f36de43a8319ac71534458d8cf7029305027667095d8507097c0c9457ee86",
+    "image_manifest_digest": "sha256:965faaaa3925ca466de6a204a7a8a5cddeede30e16630416353dee2ed81d2546",
+    "name": "docker.io/readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r4"
   }
 }

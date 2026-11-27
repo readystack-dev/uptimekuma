@@ -6,13 +6,13 @@
 
 # Uptime Kuma: ReadyStack build kit
 
-The offline build kit for the Docker image `readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r3`. It holds what the image is built from (upstream source, base images, toolchain, pinned dependencies) and the documents, so the image can be rebuilt with no network access (`docker build --network=none`).
+The offline build kit for the Docker image `readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r4`. It holds what the image is built from (upstream source, base images, toolchain, pinned dependencies) and the documents, so the image can be rebuilt with no network access (`docker build --network=none`).
 
-- Release: [2.5.12-CE-ubuntu24.04-r3](https://github.com/readystack-dev/uptimekuma/releases/tag/2.5.12-CE-ubuntu24.04-r3)
-- Image: [`docker.io/readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r3`](https://hub.docker.com/r/readystack/uptimekuma/tags), manifest digest `sha256:5ed8ea83cd683f136df4e79cd6e062eebfc1f3b033a97aba145adf9a6845bb1a`
+- Release: [2.5.12-CE-ubuntu24.04-r4](https://github.com/readystack-dev/uptimekuma/releases/tag/2.5.12-CE-ubuntu24.04-r4)
+- Image: [`docker.io/readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r4`](https://hub.docker.com/r/readystack/uptimekuma/tags), manifest digest `sha256:965faaaa3925ca466de6a204a7a8a5cddeede30e16630416353dee2ed81d2546`
 - Product page: https://readystack.dev/products/uptimekuma
 - Source and build recipe: https://readystack.dev/products/uptimekuma/recipe
-- Build trail: https://readystack.dev/products/uptimekuma/trail/2.5.12-CE-ubuntu24.04-r3
+- Build trail: https://readystack.dev/products/uptimekuma/trail/2.5.12-CE-ubuntu24.04-r4
 - Defects: this repository's Issues (defects recorded from 25 November 2026 on) and https://readystack.dev/defects.html?product=uptimekuma
 
 ## The image
@@ -31,12 +31,12 @@ From the upstream project's own description: https://github.com/louislam/uptime-
 
 ## This release
 
-- Docker Scout policy grade at release: **A** (94%), graded 2026-11-25 with `docker scout policy` (CLI 1.26.0, docker-default configuration).
+- Docker Scout policy grade at release: **A** (94%), graded 2026-11-27 with `docker scout policy` (CLI 1.26.0, docker-default configuration).
   - Docker Scout counts 99 packages with copyleft licences (GPL, LGPL, MPL), 98 of them operating-system packages (it counts only packages whose licence it can read; the SBOM lists every component).
 - Signed with ReadyStack's release key (fingerprint `04daa92344a52dbc`): https://readystack.dev/keys/cosign.pub.
 - Runs as a non-root user (`uptimekuma`).
 - Attestations on the image: an SPDX SBOM and SLSA provenance v1.
-- Rebuilt from this kit with network egress blocked on 2026-11-25; the rebuilt image digest is the published one.
+- Rebuilt from this kit with network egress blocked on 2026-11-27; the rebuilt image digest is the published one.
 - Base: Ubuntu 24.04.
 
 The current grade, measured again every day, is on https://readystack.dev/products/uptimekuma.
@@ -45,7 +45,7 @@ Uptime Kuma is distributed under its upstream licence (MIT); the kit contains up
 
 ## Download
 
-From the [2.5.12-CE-ubuntu24.04-r3 release](https://github.com/readystack-dev/uptimekuma/releases/tag/2.5.12-CE-ubuntu24.04-r3): `ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r3.tar.gz` (251.2 MB), SHA-256 `ee2f98c5ddcb25aa092bdacaa83f043c3831c93fe90d31ce2acf6523e5b15d1a`.
+From the [2.5.12-CE-ubuntu24.04-r4 release](https://github.com/readystack-dev/uptimekuma/releases/tag/2.5.12-CE-ubuntu24.04-r4): `ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r4.tar.gz` (251.2 MB), SHA-256 `421e339d03e19371ca13dd52a3088986919f05a11125b6703722e4ea8bac5ece`.
 
 ```sh
 sha256sum --check --ignore-missing SHA256SUMS
@@ -57,18 +57,18 @@ The rebuild statement is signed with the ReadyStack release key. Check the signa
 
 ```sh
 cosign verify-blob --key https://readystack.dev/keys/cosign.pub \
-  --bundle ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r3.rebuild.json.sigstore ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r3.rebuild.json
+  --bundle ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r4.rebuild.json.sigstore ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r4.rebuild.json
 ```
 
 Unpack with `-p` so file modes are kept, then follow the kit's own README.md and docs/REBUILD.md:
 
 ```sh
-tar -xpzf ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r3.tar.gz
-cd 2.5.12-CE-ubuntu24.04-r3
+tar -xpzf ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r4.tar.gz
+cd 2.5.12-CE-ubuntu24.04-r4
 less README.md docs/REBUILD.md
 ```
 
-The build trail (`ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r3.trail.json`, signed the same way, and its Markdown copy) records how this release was built and checked.
+The build trail (`ReadyStack-uptimekuma-2.5.12-CE-ubuntu24.04-r4.trail.json`, signed the same way, and its Markdown copy) records how this release was built and checked.
 
 ## This repository
 

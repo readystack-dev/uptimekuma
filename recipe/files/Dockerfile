@@ -18,7 +18,7 @@ RUN --mount=type=bind,source=vendored/debs,target=/tmp/debs \
     rm -rf /var/lib/apt/lists/* \
            /var/log/dpkg.log /var/log/alternatives.log /var/log/apt /var/cache/ldconfig/aux-cache /var/cache/fontconfig
 COPY --from=nodedist /opt/node/ /usr/local/
-ARG SOURCE_DATE_EPOCH=1795543201
+ARG SOURCE_DATE_EPOCH=1795672796
 RUN node --version && groupadd -r uptimekuma && useradd -r -g uptimekuma -d /app -m uptimekuma && \
     : "${SOURCE_DATE_EPOCH:?SOURCE_DATE_EPOCH must be set for a reproducible build}" && \
     sed -ri "s/^([^:]*:[^:]*):[0-9]*:/\1:$((SOURCE_DATE_EPOCH/86400)):/" /etc/shadow && \
@@ -26,11 +26,16 @@ RUN node --version && groupadd -r uptimekuma && useradd -r -g uptimekuma -d /app
 COPY --chown=uptimekuma:uptimekuma vendored/uptimekuma-src/ /app/
 RUN mkdir -p /app/data && chown -R uptimekuma:uptimekuma /app/data
 LABEL org.opencontainers.image.title="Uptime Kuma"
-LABEL org.opencontainers.image.source="https://github.com/louislam/uptime-kuma"
+LABEL org.opencontainers.image.source="https://github.com/readystack-dev/uptimekuma"
 LABEL org.opencontainers.image.licenses="MIT"
-LABEL org.opencontainers.image.version="2.5.12-CE-ubuntu24.04-r3"
+LABEL org.opencontainers.image.version="2.5.12-CE-ubuntu24.04-r4"
 LABEL org.opencontainers.image.description="Uptime Kuma monitors service availability and sends alerts when outages occur. This self-contained application tracks status without requiring external databases or complex infrastructure."
 LABEL org.opencontainers.image.revision="5aa5dec425f8a955b54e150636979a6927745ec5"
+LABEL readystack.upstream.source="https://github.com/louislam/uptime-kuma"
+LABEL org.opencontainers.image.url="https://readystack.dev/products/uptimekuma"
+LABEL org.opencontainers.image.documentation="https://github.com/readystack-dev/uptimekuma#readme"
+LABEL org.opencontainers.image.authors="ReadyStack <contact@readystack.dev>"
+LABEL org.opencontainers.image.vendor="ReadyStack.dev"
 HEALTHCHECK --interval=5s --timeout=120s --start-period=20s \
   CMD curl -fsS -o /dev/null -w '%{http_code}' http://127.0.0.1:3001/api/entry-page || exit 1
 USER uptimekuma

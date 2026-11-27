@@ -1,6 +1,6 @@
-image_manifest_digest=sha256:5ed8ea83cd683f136df4e79cd6e062eebfc1f3b033a97aba145adf9a6845bb1a
-config_digest=sha256:71aa8513b79f916918a496031e0b96378410f9cb190ed9407a8e3e0d5a808355
-tag=readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r3
+image_manifest_digest=sha256:965faaaa3925ca466de6a204a7a8a5cddeede30e16630416353dee2ed81d2546
+config_digest=sha256:e32f36de43a8319ac71534458d8cf7029305027667095d8507097c0c9457ee86
+tag=readystack/uptimekuma:2.5.12-CE-ubuntu24.04-r4
 probe_port=3001
 probe_path=/api/entry-page
 probe_timeout=180
